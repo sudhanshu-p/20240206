@@ -1,0 +1,445 @@
+/* Some basic initializations and resets to get started */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    /* Copied straight from Codepen */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+}
+
+/* Utility class to centre a div */
+/* (Also added gap which was needed in 99.95% cases) */
+.centered-using-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Code for the header section */
+header {
+    /* Color and height taken straight from codepen */
+    background-color: #010101;
+    height: 65px;
+
+    /* Vertically centering everything */
+    display: flex;
+    align-items: center;
+
+    /* Justify content to the sides */
+    justify-content: space-between;
+    color: white;
+
+    /* Add some padding */
+    padding: 0 0rem;
+}
+
+
+/* Codepen logo on the left */
+
+.logo {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-svg {
+    margin-left: 8px;
+    width: 30px;
+    height: 65px;
+    fill: hsl(0deg 0% 100%);
+}
+
+/* Styles for the Pen title & Author */
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 22px;
+}
+
+.pen-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.author {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.author-name {
+    color: #9b9dad;
+    font-size: 0.8rem;
+}
+
+.author-name:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.follow-button {
+    font-size: 0.7rem;
+    /* TODO: Make this a variable */
+    background-color: hsl(139.41deg 58.62% 54.51%);
+    padding: 1px 5px;
+    border-radius: 2px;
+}
+
+.follow-button:hover {
+    background-color: #248c46;
+    color: white;
+    cursor: pointer;
+}
+
+.follow-button:hover .follow-icon-svg {
+    fill: white;
+}
+
+
+.follow-icon-svg {
+    margin-right: 0.35em;
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+}
+
+/* Moving on to the right side of the Navbar */
+ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-svg {
+    width: 16px;
+    height: 16px;
+    fill: white;
+}
+
+nav {
+    display: flex;
+}
+
+.nav-icon {
+    background-color: #444857;
+    min-height: 80%;
+    color: white;
+    margin: 1px 10px 1px 0;
+    padding: 13px 18px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.nav-icon:hover {
+    background-color: #5a5f73;
+}
+
+/* The settings section in nav is the only one with an icon and text */
+/* Hence, we need to flex that button. */
+#settings {
+    display: flex;
+    gap: 0.4rem;
+}
+
+/* Rotating the svg to be a perfect copy */
+.view>svg {
+    transform: rotate(90deg);
+}
+
+.sign-up-button {
+    /* TODO: Make this a variable! */
+    background-color: hsl(139.41deg 58.62% 54.51%);
+    color: black;
+}
+
+.sign-up-button:hover {
+    background-color: #248c46;
+    color: white;
+}
+
+/* Now styling the centre */
+
+/* Using Grid to size the proportions accordingly */
+main {
+    /* Overall - Header - Footer */
+    height: calc(100% - 65px - 30px);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+article.mobile-code {
+    display: none;
+}
+
+/* Just leaving a blank white area on left */
+aside {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The right houses the 3 code sections. Using Grid to size those sections*/
+article.desktop-code {
+    background-color: #060606;
+    display: grid;
+    padding-left: 20px;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+/* Now, creating the generic parts in each code. */
+.code-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #060606;
+    padding-right: 15px;
+}
+
+.code-lang {
+    font-weight: 700;
+    font-size: 1.1rem;
+    background-color: #1d1e22;
+    padding: 9px;
+    border-top: 3px solid #34363e;
+    color: hsl(226.67deg 11.84% 70.2%);
+}
+
+/* This is an SVG */
+svg.file-type-icon {
+    width: 17px;
+    height: 17px;
+}
+
+/* Buttons on the left side */
+.code-button {
+    background-color: #444857;
+    padding: 0 8px;
+}
+
+.code-button:hover {
+    background-color: #5a5f73;
+}
+
+/* The SVGs on the right in the code section */
+.code-svg {
+    width: 10px;
+    height: 10px;
+    fill: white;
+}
+
+/* Not adding the code, instead a blank space in the codes section */
+.code-section {
+    background-color: #1d1e22;
+}
+
+.code-content {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: #1d1e22;
+    color: white;
+}
+
+.code-content:focus {
+    border: none;
+    outline: none;
+}
+
+/* The styles for the footer */
+
+footer {
+    height: 30px;
+    position: relative;
+    bottom: 0;
+    background-color: #2c303a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    padding: 0px 0.5rem;
+}
+
+.footer-button {
+    background-color: #444857;
+    color: white;
+    padding: 3px 7px;
+    font-size: .8rem;
+}
+
+.footer-button:hover {
+    background-color: #5a5f73;
+}
+
+.footer-svg {
+    width: 10px;
+    height: 10px;
+    fill: white;
+}
+
+#footer-magnify {
+    display: none;
+}
+
+
+/* Moving on to making the page more responsive! */
+
+/* First breakpoint */
+/* Expected effects 
+- decrease the size of nav & nav-icons
+- decrease the size of footer & footer-buttons
+- decrease font size of title
+*/
+@media screen and (max-width: 830px) {
+    header {
+        height: 53px;
+    }
+
+    .nav-icon {
+        font-size: 0.9rem;
+        padding: 9px 12px;
+        margin: 1px 5px 1px 0;
+        overflow: hidden;
+    }
+
+    .title {
+        line-height: 20px;
+    }
+
+    .pen-name {
+        font-size: 1.1rem;
+    }
+
+    .follow-button {
+        font-size: 0.6rem;
+    }
+
+    .author-name {
+        font-size: 0.8rem;
+    }
+
+    main {
+        height: calc(100% - 53px - 30px);
+    }
+
+    .footer-button {
+        font-size: 0.75rem;
+    }
+}
+
+/* Second breakpoint */
+/* Expected effects
+- Change code format completely (TODO)
+- Navbar gets a Hamburger
+- Footer - Embed and Shortcuts go missing, new addition of 1.0
+- Font size of title
+- Author follow goes missing
+*/
+@media screen and (max-width: 766px) {
+    #footer-embed {
+        display: none;
+    }
+
+    #footer-shortcuts {
+        display: none;
+    }
+
+    #footer-magnify {
+        display: inline-block;
+    }
+
+    .follow-button {
+        display: none;
+    }
+
+    .author {
+        align-items: start;
+        justify-content: start;
+    }
+
+    .pen-name {
+        font-size: 0.96rem;
+    }
+
+    .desktop-code > * {
+        display: none;
+    }
+}
+
+/* Third breakpoint */
+/* Expected effects
+- Updated UI of main (TODO) instead, I make the code full screen for now.
+*/
+@media screen and (max-width: 690px) {
+    main {
+        grid-template-rows: 0fr 1fr;
+    }
+
+    #settings {
+        display: none;
+    }
+
+    aside {
+        display: none;
+    }
+
+    article.desktop-code {
+        width: 100vw;
+    }
+}
+
+/* Fourth breakpoint */
+/* Expected effects
+- Footer's left part gets a hamburger for everything
+- Font size of title
+*/
+@media screen and (max-width: 550px) {
+    .nav-icon {
+        font-size: 0.8rem;
+        padding: 0.7rem 0.5rem;
+    }
+
+    .logo-svg {
+        height: 1.3rem;
+    }
+
+    article.desktop-code {
+        height: calc(100% - 53px - 30px);
+    }
+
+    .code-section {
+        max-height: calc((100% - 53px - 30px) / 3);
+    }
+
+    .footer-button {
+        font-size: 0.5rem;
+    }
+}

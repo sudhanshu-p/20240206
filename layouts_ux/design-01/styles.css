@@ -1,0 +1,32 @@
+/* Reseting the spaces */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+    /* Full width, full height */
+    height: 100vh;
+    width: 100vw;
+    /* Centering the children through flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    /* Half width, half height */
+    width: 50%;
+    height: 50%;
+
+    /* Black color */
+    background-color: black;
+
+    /* Centering the content inside main [additional] */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: x-large;
+}
